@@ -9,27 +9,27 @@
     <title>Socket Client</title>
 </head>
 
-<body class="container">
-    <h1 class="mt-5">Socket Client</h1>
-    <hr>
-    <p>
-        status-server:
-        <span id="lblOnline" class="text-success">Online</span>
-        <span id="lblOffline" class="text-danger">Offline</span>
-    </p>
+<body>
+    <div class="container">
 
-    <div class="row mb-5">
-        <div class="col">
-            <input type="text" id="txtInput" class="form-control">
-        </div>
-        <div class="col">
-            <button id="btnSend" class="btn btn-primary">Send</button>
+        <h1 class="mt-5">Socket Client</h1>
+        <hr>
+        <p>
+            status-server:
+            <span id="lblOnline" class="text-success">Online</span>
+            <span id="lblOffline" class="text-danger">Offline</span>
+        </p>
+
+        <div class="row ">
+            <div id="messagesParent" class="col" style="width: 100%;">
+                <h3 class="mb-3">Global messages</h3>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div id="messagesParent" class="col" style="width: 100%;">
-            <h3 class="mb-3">Global messages</h3>
-        </div>
+
+    <div style="display:flex;flex-direction: row; position:absolute; bottom:0; width:100%">
+        <input type="text" id="txtInput" class="form-control">
+        <button id="btnSend" class="btn btn-primary">Send</button>
     </div>
     <script src="./socket.io/socket.io.js"></script>
     <script src="./js/socket-client.js"></script>
