@@ -18,12 +18,17 @@
         <span id="lblOffline" class="text-danger">Offline</span>
     </p>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col">
             <input type="text" id="txtInput" class="form-control">
         </div>
         <div class="col">
             <button id="btnSend" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+    <div class="row">
+        <div id="messagesParent" class="col-7">
+            <h3 class="mb-3">Global messages</h3>
         </div>
     </div>
     <script src="./socket.io/socket.io.js"></script>

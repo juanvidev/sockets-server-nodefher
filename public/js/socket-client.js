@@ -3,6 +3,9 @@ const lblOnline = document.querySelector('#lblOnline');
 const lblOffline = document.querySelector('#lblOffline')
 const txtInput = document.querySelector('#txtInput');
 const btnSend = document.querySelector('#btnSend');
+const messageRecived = document.querySelector('#messageRecived');
+const messagesSent = document.querySelector('#messagesSent');
+const messagesParent = document.querySelector('#messagesParent');
 
 const socketClient = io();
 
@@ -20,7 +23,10 @@ socketClient.on('disconnect', () => {
 
 btnSend.addEventListener('click', () => {
     const msg = txtInput.value;
-
+    const newMessage = document.createElement('p');
+    newMessage.style.textAlign = 'right';
+    newMessage.innerHTML = msg;
+    messagesParent.append(newMessage);
     const payload = {
         msg,
         id: 'asDF3Rsd34',
@@ -35,4 +41,7 @@ btnSend.addEventListener('click', () => {
 
 socketClient.on('send-msg', (payload) => {
     console.log(payload);
+    const newMessageFromOut = document.createElement('p');
+    newMessageFromOut.innerHTML = payload.msg;
+    messagesParent.append(newMessageFromOut);
 })
